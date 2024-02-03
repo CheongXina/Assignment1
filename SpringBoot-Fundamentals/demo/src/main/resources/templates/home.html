@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Testing out Ivan's springboot app</h1>
+<h2>Item List</h2>
+<div>
+    <ul>
+        <li th:each="item : ${items}" th:text="${item}">Item</li>
+    </ul>
+</div>
+<form action="/list" method="get">
+    <button type="submit">Refresh List</button>
+</form>
+</body>
+</html>
