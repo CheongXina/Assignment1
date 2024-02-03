@@ -27,7 +27,9 @@ public class CreatureService {
         return creatureRepository.updateById(id,newName);
     }
 
-
+    public Creature create(String id, String newName) {
+        return creatureRepository.create(id,newName);
+    }
     public List<Creature> getAllData() {
         return creatureRepository.findAll();
     }

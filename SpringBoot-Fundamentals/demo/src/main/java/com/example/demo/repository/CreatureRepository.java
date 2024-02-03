@@ -53,4 +53,19 @@ public class CreatureRepository {
             }}
         return new Creature("404", "noone");
     }
+    public Creature create(String id, String newName) {
+        Creature checker = new Creature();
+        checker = findById(id);
+       if (checker.creatureID.contentEquals("404")) {
+           Creature creatureInsert = new Creature();
+           creatureInsert.creatureName = newName;
+           creatureInsert.creatureID = id;
+           creatureDataList.add(creatureInsert);
+           return creatureInsert;
+       }
+       else {
+           return new Creature("404", "noone");
+
+       }
+    }
 }

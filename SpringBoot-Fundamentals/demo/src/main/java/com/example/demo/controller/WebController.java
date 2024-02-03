@@ -56,8 +56,12 @@ public class WebController {
         return creatureService.deleteById(creatureID);
     }
     @PostMapping("/update/{creatureID}/{name}")
-    public Creature deleteById(@PathVariable String creatureID,@PathVariable String name){
+    public Creature updateById(@PathVariable String creatureID,@PathVariable String name){
         return creatureService.updateById(creatureID, name);
+    }
+    @PostMapping("/create/{creatureID}/{name}")
+    public Creature create(@PathVariable String creatureID,@PathVariable String name){
+        return creatureService.create(creatureID, name);
     }
     /* For documentation purposes, this is no longer needed to force the service
     @GetMapping("/all")
